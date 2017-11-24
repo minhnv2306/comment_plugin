@@ -22,3 +22,5 @@ Route::get('test', function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/comments', 'CommentController@store');
+Route::post('/comments/view', 'CommentController@viewCommentOfUrl');

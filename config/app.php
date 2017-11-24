@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    // URL Default
+    'url_default' => env('URL_DEFAULT', 'http://localhost/dashboard/'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
