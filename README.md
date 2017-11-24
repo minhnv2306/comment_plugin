@@ -1,0 +1,1 @@
+Plugin Comment: Cho phép nhúng comment vào các trang khác
