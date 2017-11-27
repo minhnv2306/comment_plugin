@@ -56,4 +56,7 @@
   </div>
 </div>
 
+<script type="text/javascript" src="js/addcomment.js"></script>
+<script type="text/javascript" src="js/viewurl.js"></script>
+
 @endsection
