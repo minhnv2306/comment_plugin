@@ -28,3 +28,11 @@ Route::post('/comments/view', 'CommentController@viewCommentOfUrl');
 Route::get('/plugin', function(){
 	return view('plugin');
 });
+
+Route::get('auth/facebook', ['as' => 'auth/facebook', 'uses' => 'Auth\LoginController@redirectToProvider']);
+Route::get('auth/facebook/callback', [
+	'as' => 'auth/facebook/callback',
+    'uses' => 'Auth\LoginController@handleProviderCallback'
+]);
+
+Route::post('load', 'CommentController@loadMore');

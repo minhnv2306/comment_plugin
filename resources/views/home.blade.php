@@ -11,19 +11,9 @@
                 <label for="comment"> {{ trans('message.link')}}</label>
                 <input id="url" type="text" class="form-control" name="url" placeholder="URL" value="{{$url}}">
             </div>
-
-            <div class="panel-body" id="body">
-                @if (session('status'))
-                <div class="alert alert-success">
-                  {{ session('status') }}
-                 </div>
-                @endif
-
-                <h2> {{ trans('message.comment') }}</h2>
-              
-                @include('comment.show')
-            </div>
+            
             <div class="panel-body">
+                <h2> {{ trans('message.comment') }}</h2>
                 <!-- Left-aligned media object -->
                 <div class="media">
                     <div class="media-left">
@@ -38,6 +28,16 @@
                     <button class="btn btn-primary" id="addcomment"> {{ trans('message.comment') }}</button>
                 </div>
 
+            </div>
+
+            <div class="panel-body" id="body">
+                @if (session('status'))
+                <div class="alert alert-success">
+                  {{ session('status') }}
+                 </div>
+                @endif
+              
+                @include('comment.show')
             </div>
         </div>
       </div>

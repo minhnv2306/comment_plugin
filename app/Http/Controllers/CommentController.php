@@ -18,11 +18,29 @@ class CommentController extends Controller
     	return view('comment.store', compact('comment'));
     }
 
+
     public function viewCommentOfUrl(Request $request)
     {
-    	$url = $request->url;
-    	$comments = Comment::where('url', $url)->orderBy('created_at', 'desc')->get();
+    	$comments = Comment::where('url', $request->url)
+            ->orderBy('created_at', 'desc')
+            ->get()
+            ->take(config('app.load_more'));
     	
     	return view('comment.show', compact('comments'));
+    }
+
+    public function loadMore(Request $request)
+    {
+        $comments = Comment::where('url', $request->url)
+            ->orderBy('created_at', 'desc')
+            ->get()
+            ->splice($request->splice)
+            ->take(config('app.load_more'));  
+
+        if (count($comments) == 0) {
+            return 1;
+        } else {
+            return view('comment.show', compact('comments'));
+        }
     }
 }

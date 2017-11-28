@@ -21,7 +21,6 @@ $(document).ready(function() {
 				function(data, status) {
 					$('#content').val('');
 					$('#body').prepend(data);
-
 				}
 			)
 		}

@@ -10,8 +10,8 @@ $(document).ready(function() {
 			_token: token, 
 		},
 		function(data, status) {
-				// Xoa toan bo du lieu di de them du lieu moi
-				$('#body').append(data);
+			// Xoa toan bo du lieu di de them du lieu moi
+			$('#body').append(data);
 
 		}
 	)
