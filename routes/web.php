@@ -24,3 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/comments', 'CommentController@store');
 Route::post('/comments/view', 'CommentController@viewCommentOfUrl');
+
+Route::get('/plugin', function(){
+	return view('plugin');
+});

@@ -3,6 +3,7 @@
 return [
     // URL Default
     'url_default' => env('URL_DEFAULT', 'http://localhost/dashboard/'),
+    'avatar' => env('IMAGE', 'https://www.w3schools.com/w3images/nature.jpg'),
     /*
     |--------------------------------------------------------------------------
     | Application Name

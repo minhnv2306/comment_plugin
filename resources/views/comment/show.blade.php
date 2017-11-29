@@ -1,10 +1,8 @@
-<h2>{{ trans('message.comment')}}</h2>
-
 @foreach($comments as $comment)
 <!-- Left-aligned media object -->
 <div class="media">
   <div class="media-left">
-    <img src="https://www.w3schools.com/w3images/nature.jpg" class="media-object" style="width:60px">
+    <img src={{ config('app.avatar')}} class="media-object" style="width:60px">
   </div>
   <div class="media-body">
     <h4 class="media-heading">{{ $comment->user->name }}</h4>
