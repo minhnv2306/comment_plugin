@@ -37,6 +37,7 @@
             </div>
 
             <div id=body>
+                <button id="load_more" class="btn btn-primary">Load more</button>
             </div>
         </div>
     </div>
@@ -45,4 +46,5 @@
 <script type="text/javascript" src="js/addcomment.js"></script>
 <script type="text/javascript" src="js/viewurl.js"></script>
 <script type="text/javascript" src="js/loadcomment.js"></script>
+<script type="text/javascript" src="js/loadmore.js"></script>
 @endsection

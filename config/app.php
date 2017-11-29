@@ -4,6 +4,7 @@ return [
     // URL Default
     'url_default' => env('URL_DEFAULT', 'http://localhost/dashboard/'),
     'avatar' => env('IMAGE', 'https://www.w3schools.com/w3images/nature.jpg'),
+    'load_more' => env('LOAD_MORE', 1),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -169,7 +170,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -227,6 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
