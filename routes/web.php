@@ -26,6 +26,7 @@ Route::post('/comments', 'CommentController@store');
 Route::post('/comments/view', 'CommentController@viewCommentOfUrl');
 
 Route::get('/plugin', function(){
+	session(['nonce' => 1]);
 	return view('plugin');
 });
 

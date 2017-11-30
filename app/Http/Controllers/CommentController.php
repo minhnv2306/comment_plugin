@@ -7,15 +7,24 @@ use App\Comment;
 
 class CommentController extends Controller
 {
+    public function generateNonce($nonce)
+    {
+        return $nonce + 1;
+    }
+
     public function store(Request $request)
     {	
-    	$comment = Comment::create([
-    		'user_id' => auth()->user()->id,
-    		'content' => $request->content,
-    		'url' => $request->url
-    	]);
+        if (session('nonce') == $request->nonce) {
+            $comment = Comment::create([
+                'user_id' => auth()->user()->id,
+                'content' => $request->content,
+                'url' => $request->url
+            ]);
+            $newNonce = $this->generateNonce(session('nonce'));
+            session(['nonce' => $newNonce]);
 
-    	return view('comment.store', compact('comment'));
+            return view('comment.store', compact('comment'));
+        }   
     }
 
 
